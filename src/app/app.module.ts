@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './component/app/app.component';
 import { LoginComponent } from './component/login/login.component';
 import { MainComponent } from './component/main/main.component';
+import { MemberListComponent } from './component/memberList/memberList.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { RouteConfig } from './config/router.config';
 
@@ -11,7 +12,8 @@ import { RouteConfig } from './config/router.config';
     AppComponent,
     LoginComponent,
     MainComponent,
-    MenuComponent
+    MenuComponent,
+    MemberListComponent
   ],
   imports: [
     BrowserModule,

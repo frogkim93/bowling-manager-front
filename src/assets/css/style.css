@@ -1,11 +1,11 @@
-html, body .container{
+html, body, .container {
     width: 100%;
     height: 100%;
     margin: 0px;
     padding: 0px;
 }
 
-html, input, button {
+html, input, button, .container {
     font-family: 'DoHyeon';
     font-weight: 100;
 }
@@ -139,6 +139,32 @@ header.menu a {
 header.menu a.on {
     color: cornflowerblue;
     position: relative;
+}
+
+section.memberList {
+    width: 23%;
+    padding: 5px 10px;
+}
+
+section.memberList * {
+    font-weight: 100;
+}
+
+section.memberList .memberListHeader {
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+}
+
+section.memberList .memberListBox {
+    padding-left: 15px;
+}
+
+section.memberList .memberListBox .memberImageBox {
+    width: 30px;
+    height: 30px;
+    border-radius: 70px;
+    border-radius: 1px solid gray;
 }
 
 footer {
