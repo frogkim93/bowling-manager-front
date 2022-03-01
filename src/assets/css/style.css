@@ -389,6 +389,102 @@ section.makeTeam .contentArea .teamMakeBox .configBtnBox button {
     padding: 5px;
 }
 
+section.summary {
+    padding-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+section.summary .contentArea {
+    margin-left: 10px;
+    width: 98%;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+section.summary .contentArea.recentTeamArea {
+    height: 280px;
+    min-height: 280px;
+    max-height: 280px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+section.summary .contentArea.recentTeamArea .title {
+    margin: 10px;
+    display: flex;
+}
+
+section.summary .contentArea.recentTeamArea .title h3 {
+    margin: 0px;
+}
+
+section.summary .contentArea.recentTeamArea .title button {
+    margin-left: 15px;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+section.summary .contentArea.recentTeamArea .teamListBox {
+    white-space: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    margin: 10px;
+}
+
+section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox {
+    display: inline-block;
+    margin-right: 15px;
+    width: 27%;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox h5 {
+    margin: 0px;
+    font-size: 18px;
+}
+
+section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox .tableBox,
+section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox .tableBox table {
+    width: 100%;
+}
+
+section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox .tableBox {
+    max-height: 191px;
+    overflow-y: auto;
+}
+
+section.summary .contentArea.recentGameRecord {
+    margin-top: 10px;
+    height: 55%;
+    min-height: 280px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+section.summary .contentArea.recentGameRecord > * {
+    margin: 10px;
+}
+
+section.summary .contentArea.recentGameRecord .title h3 {
+    margin: 0px;
+}
+
+section.summary .contentArea.recentGameRecord table {
+    width: 98%;
+    text-align: center;
+}
+
+section.summary .contentArea.recentGameRecord table th, 
+section.summary .contentArea.recentGameRecord table td {
+    border: 1px solid gray;
+}
+
 section.footer {
     position: absolute;
     bottom: 0px;
