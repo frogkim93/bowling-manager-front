@@ -232,6 +232,163 @@ section.memberRegistDialog .addMemberBtn {
     width: 100%;
 }
 
+section.right-content {
+    position: absolute;
+    right: 0px;
+    width: calc(100% - 23% - 21px);
+    height: calc(100% - 115px);
+}
+
+section.makeTeam {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.makeTeam .contentArea {
+    width: 98%;
+    height: 98%;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+section.makeTeam .contentArea .participantSelectBox {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+section.makeTeam .contentArea .participantSelectBox .title {
+    display: flex;
+    align-items: center;
+}
+
+section.makeTeam .contentArea .participantSelectBox .title * {
+    margin: 0px;
+}
+
+section.makeTeam .contentArea .participantSelectBox .title p {
+    margin-left: 15px;
+    color: #ff0000;
+}
+
+section.makeTeam .contentArea .participantSelectBox .memberListBox {
+    padding-top: 10px;
+    display: inline-block;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 244px;
+    max-height: 244px;
+    overflow-y: auto;
+}
+
+section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 5px;
+    width: 150px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 58px;
+    max-height: 58px;
+    min-height: 58px;
+}
+
+section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox .memberImgBox {
+    width: 45px;
+    height: 45px;
+    border: 1px solid gray;
+    border-radius: 45px;
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox .memberInfoBox {
+    width: calc(100% - 45px);
+}
+
+section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox .memberInfoBox table {
+    font-size: 12px;
+}
+
+section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox .memberInfoBox table tr td:first-child {
+    width: 60%;
+}
+
+section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox .memberInfoBox table tr td:last-child {
+    width: 40%;
+    text-align: right;
+}
+
+section.makeTeam .contentArea .teamMakeBox {
+    margin-left: 10px;
+}
+
+section.makeTeam .contentArea .teamMakeBox .title {
+    display: flex;
+    align-items: center;
+}
+
+section.makeTeam .contentArea .teamMakeBox .title h3 {
+    margin: 0px;
+    margin-right: 10px;
+}
+
+section.makeTeam .contentArea .teamMakeBox .title p {
+    color: #ff0000;
+}
+
+section.makeTeam .contentArea .teamMakeBox .teamListBox {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+section.makeTeam .contentArea .teamMakeBox .teamListBox .teamInfoBox {
+    margin-top: 10px;
+    border: 1px solid gray;
+    width: 27%;
+    margin-right: 15px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.makeTeam .contentArea .teamMakeBox .teamListBox .teamInfoBox h5 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+section.makeTeam .contentArea .teamMakeBox .teamListBox .teamInfoBox .tableBox {
+    width: 100%;
+    height: 170px;
+    max-height: 170px;
+    overflow-y: auto;
+}
+
+section.makeTeam .contentArea .teamMakeBox .teamListBox .teamInfoBox .tableBox table {
+    width: 100%;
+    text-align: center;
+}
+
+section.makeTeam .contentArea .teamMakeBox .teamListBox .teamInfoBox .tableBox table tr td {
+    width: 33%;
+}
+
+section.makeTeam .contentArea .teamMakeBox .configBtnBox {
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+section.makeTeam .contentArea .teamMakeBox .configBtnBox button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 5px;
+}
+
 section.footer {
     position: absolute;
     bottom: 0px;
