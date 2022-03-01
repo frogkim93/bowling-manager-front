@@ -4,20 +4,33 @@
             회원 목록
         </h1>
         <div>
-            <button>
+            <button (click)="openAddMemberDialog()">
                 추가
             </button>
         </div>
     </div>
     <div class="memberListBox">
-        <div>
+        <div class="memberBox">
             <div class="memberImageBox">
-                <img src="/assets/images/temp-logo.png">
+                <img src="/assets/images/man-icon.png">
             </div>
-            <div>
+            <div class="memberName">
                 홍길동
             </div>
-            <div>
+            <div class="memberManageBtnBox">
+                <button>
+                    수정
+                </button>
+            </div>
+        </div>
+        <div class="memberBox">
+            <div class="memberImageBox">
+                <img src="/assets/images/woman-icon.png">
+            </div>
+            <div class="memberName">
+                홍길순
+            </div>
+            <div class="memberManageBtnBox">
                 <button>
                     수정
                 </button>
@@ -25,3 +38,5 @@
         </div>
     </div>
 </section>
+
+<add-member *ngIf="isVisibleAddMemberDialog" (closeDialogEvent)="closeDialog()"></add-member>

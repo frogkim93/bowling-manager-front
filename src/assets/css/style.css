@@ -142,8 +142,11 @@ header.menu a.on {
 }
 
 section.memberList {
+    position: absolute;
     width: 23%;
     padding: 5px 10px;
+    height: calc(100% - 115px);
+    border-right: 1px solid gray;
 }
 
 section.memberList * {
@@ -160,14 +163,76 @@ section.memberList .memberListBox {
     padding-left: 15px;
 }
 
-section.memberList .memberListBox .memberImageBox {
-    width: 30px;
-    height: 30px;
-    border-radius: 70px;
-    border-radius: 1px solid gray;
+section.memberList .memberListBox .memberBox {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5px;
 }
 
-footer {
+section.memberList .memberListBox .memberBox .memberImageBox {
+    border: 1px solid gray;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+section.memberList .memberListBox .memberBox .memberName {
+    width: calc(70% - 40px);
+    font-size: 20px;
+}
+
+section.memberList .memberListBox .memberBox .memberManageBtnBox {
+    width: calc(30% - 40px);
+    text-align: right;
+}
+
+section.dialog {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section.memberRegistDialog {
+    width: 250px;
+    height: 155px;
+    border: 1px solid gray;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section.memberRegistDialog .title h3 {
+    margin: 0px;
+}
+
+section.memberRegistDialog .title .closeBtnBox {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+section.memberRegistDialog table {
+    height: 70px;
+}
+
+section.memberRegistDialog table * {
+    text-align: left;
+}
+
+section.memberRegistDialog table tr th:first-child {
+    width: 25%;
+}
+
+section.memberRegistDialog .addMemberBtn {
+    width: 100%;
+}
+
+section.footer {
     position: absolute;
     bottom: 0px;
     text-align: center;
