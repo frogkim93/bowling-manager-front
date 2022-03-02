@@ -5,5 +5,9 @@ import { Component } from "@angular/core";
     templateUrl: "./view/summary.component.html"
 })
 export class SummaryComponent {
-    
+    public isVisibleRecordDialog: boolean = false;
+
+    public toggleVisibleRecordDialog(): void {
+        this.isVisibleRecordDialog = !this.isVisibleRecordDialog;
+    }
 }

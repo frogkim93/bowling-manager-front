@@ -1,5 +1,5 @@
 <header class="menu flex">
-    <div class="flex">
+    <div (click)="changeMenu(menu.MAIN)" class="flex">
         <div class="logoBox">
             <img src="/assets/images/temp-logo.png">
         </div>
@@ -8,10 +8,10 @@
         </h1>
     </div>
     <div>
-        <a>
+        <a (click)="changeMenu(menu.MAKE_TEAM)" [class.on]="isCurrentMenu(menu.MAKE_TEAM)">
             팀짜기
         </a>
-        <a class="on">
+        <a (click)="changeMenu(menu.GAME_HISTORY)" [class.on]="isCurrentMenu(menu.GAME_HISTORY)">
             게임기록
         </a>
         <a>

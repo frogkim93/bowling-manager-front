@@ -1,5 +1,5 @@
 <menu class="container"></menu>
 <memberList class="container"></memberList>
-<!-- <make-team class="container"></make-team> -->
-<summary class="container"></summary>
+<make-team *ngIf="isCurrentMenu(menu.MAKE_TEAM)" class="container"></make-team>
+<summary *ngIf="isCurrentMenu(menu.MAIN)" class="container"></summary>
 <footer></footer>

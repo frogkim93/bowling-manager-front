@@ -4,7 +4,7 @@
             <h3>
                 오늘의 팀
             </h3>
-            <button>
+            <button (click)="toggleVisibleRecordDialog()">
                 점수 기록
             </button>
         </div>
@@ -875,3 +875,5 @@
         </table>
     </div>
 </section>
+
+<record *ngIf="isVisibleRecordDialog" (closeEvent)="toggleVisibleRecordDialog()"></record>

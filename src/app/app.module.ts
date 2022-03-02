@@ -8,8 +8,10 @@ import { MakeTeamComponent } from './component/make-team/make-team.component';
 import { AddMemberComponent } from './component/memberList/add-member/add-member.component';
 import { MemberListComponent } from './component/memberList/memberList.component';
 import { MenuComponent } from './component/menu/menu.component';
+import { RecordComponent } from './component/record/record.component';
 import { SummaryComponent } from './component/summary/summary.component';
 import { RouteConfig } from './config/router.config';
+import { MenuService } from './service/menu.service';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,14 @@ import { RouteConfig } from './config/router.config';
     AddMemberComponent,
     MakeTeamComponent,
     SummaryComponent,
+    RecordComponent,
     FooterComponent
   ],
   imports: [
     BrowserModule,
     RouteConfig
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
