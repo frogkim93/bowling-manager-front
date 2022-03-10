@@ -3,3 +3,7 @@
     font-family: 'DoHyeon';
     src: url(./assets/font/DoHyeon-Regular.ttf);
 }
+@font-face {
+    font-family: 'MaruBuri';
+    src: url(./assets/font/MaruBuri-Regular.ttf);
+}

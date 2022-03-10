@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './component/app/app.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { GameHistoryComponent } from './component/game-history/game-history.component';
 import { LoginComponent } from './component/login/login.component';
 import { MainComponent } from './component/main/main.component';
 import { MakeTeamComponent } from './component/make-team/make-team.component';
@@ -24,6 +25,7 @@ import { MenuService } from './service/menu.service';
     MakeTeamComponent,
     SummaryComponent,
     RecordComponent,
+    GameHistoryComponent,
     FooterComponent
   ],
   imports: [
