@@ -5,5 +5,5 @@ import { Component } from "@angular/core";
     templateUrl: "./view/game-history.component.html"
 })
 export class GameHistoryComponent {
-    
+    public today: Date = new Date();
 }

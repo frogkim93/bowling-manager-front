@@ -3,7 +3,7 @@ import { MenuCode } from "../const/menu.code";
 
 @Injectable()
 export class MenuService {
-    private currentMenu: MenuCode = MenuCode.MAIN;
+    private currentMenu: MenuCode = MenuCode.CONFIG;
 
     public getCurrentMenu(): MenuCode {
         return this.currentMenu;

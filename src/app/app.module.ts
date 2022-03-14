@@ -13,6 +13,14 @@ import { RecordComponent } from './component/record/record.component';
 import { SummaryComponent } from './component/summary/summary.component';
 import { RouteConfig } from './config/router.config';
 import { MenuService } from './service/menu.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
+import 'moment/locale/ko';
+import { RegularGameHistory } from './component/regular-game-history/regular-game-history.component';
+import { ConfigComponent } from './component/config/config.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +34,22 @@ import { MenuService } from './service/menu.service';
     SummaryComponent,
     RecordComponent,
     GameHistoryComponent,
+    RegularGameHistory,
+    ConfigComponent,
     FooterComponent
   ],
   imports: [
     BrowserModule,
-    RouteConfig
+    RouteConfig,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatInputModule
   ],
-  providers: [MenuService],
+  providers: [
+    MenuService,
+    {provide: MAT_DATE_LOCALE, useValue: 'ko-KR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,9 +3,9 @@
         <div class="logoBox">
             <img src="/assets/images/temp-logo.png">
         </div>
-        <h1 class="logoText">
+        <h2 class="logoText">
             볼총무
-        </h1>
+        </h2>
     </div>
     <div>
         <a (click)="changeMenu(menu.MAKE_TEAM)" [class.on]="isCurrentMenu(menu.MAKE_TEAM)">
@@ -14,19 +14,13 @@
         <a (click)="changeMenu(menu.GAME_HISTORY)" [class.on]="isCurrentMenu(menu.GAME_HISTORY)">
             게임기록
         </a>
-        <a>
+        <a (click)="changeMenu(menu.REGULAR_GAME)" [class.on]="isCurrentMenu(menu.REGULAR_GAME)">
             정기전
-        </a>
-        <a>
-            핸디설정
         </a>
     </div>
     <div>
-        <a>
-            마이페이지
-        </a>
-        <a>
-            로그아웃
+        <a (click)="changeMenu(menu.CONFIG)" [class.on]="isCurrentMenu(menu.CONFIG)">
+            설정
         </a>
     </div>
 </header>

@@ -1,4 +1,4 @@
-html, body, .container {
+html, body {
     width: 100%;
     height: 100%;
     margin: 0px;
@@ -10,8 +10,13 @@ html, input, button, .container {
     font-weight: 100;
 }
 
-header {
-    height: 40px;
+.flex {
+    display: flex;
+}
+
+menu, h1, h2, h3, h4, h5, p {
+    margin: 0px;
+    padding: 0px;
 }
 
 img {
@@ -19,13 +24,8 @@ img {
     height: 100%;
 }
 
-h1, p {
-    margin: 0px;
-    padding: 0px;
-}
-
-.flex {
-    display: flex;
+header.menu {
+    height: 40px;
 }
 
 header .logoBox {
@@ -38,6 +38,7 @@ header .logoBox {
 h1.logoText {
     font-size: 2em;
     font-weight: 100;
+    cursor: pointer;
 }
 
 section.login {
@@ -115,7 +116,7 @@ header.menu > div:first-child {
 }
 
 header.menu > div:nth-child(2) {
-    width: 55%;
+    width: 50%;
 }
 
 header.menu > div:last-child {
@@ -132,7 +133,7 @@ header.menu > div:nth-child(2) a {
 }
 
 header.menu a {
-    font-size: 23px;
+    font-size: 17px;
     cursor: pointer;
 }
 
@@ -141,12 +142,20 @@ header.menu a.on {
     position: relative;
 }
 
-section.memberList {
+section.leftPanel {
     position: absolute;
     width: 23%;
-    max-width: 320px;
-    padding: 5px 10px;
-    height: calc(100% - 115px);
+    height: calc(100% - 80px);
+}
+
+section.rightPanel {
+    position: absolute;
+    width: 77%;
+    right: 0px;
+    height: calc(100% - 80px);
+}
+
+section.memberList {
     border-right: 1px solid gray;
 }
 
@@ -157,37 +166,32 @@ section.memberList * {
 section.memberList .memberListHeader {
     align-items: center;
     justify-content: space-between;
-    padding-left: 15px;
+    margin: 10px;
 }
 
 section.memberList .memberListBox {
-    padding-left: 15px;
+    margin: 0px 10px;
 }
 
 section.memberList .memberListBox .memberBox {
     display: flex;
-    height: 60px;
+    height: 25px;
     align-items: center;
     justify-content: space-between;
-    padding-left: 5px;
+    margin-bottom: 5px;
 }
 
 section.memberList .memberListBox .memberBox .memberImageBox {
     border: 1px solid gray;
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
     overflow: hidden;
 }
 
 section.memberList .memberListBox .memberBox .memberName {
     width: calc(70% - 40px);
-    font-size: 20px;
-}
-
-section.memberList .memberListBox .memberBox .memberManageBtnBox {
-    width: calc(30% - 40px);
-    text-align: right;
+    font-size: 13px;
 }
 
 section.dialog {
@@ -199,12 +203,14 @@ section.dialog {
 
 section.memberRegistDialog {
     width: 250px;
-    height: 155px;
+    height: 150px;
     border: 1px solid gray;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #D9A282;
+    z-index: 1;
 }
 
 section.memberRegistDialog .title h3 {
@@ -233,57 +239,43 @@ section.memberRegistDialog .addMemberBtn {
     width: 100%;
 }
 
-section.right-content {
-    position: absolute;
-    right: 0px;
-    width: calc(100% - 23% - 21px);
-    height: calc(100% - 115px);
-}
-
 section.makeTeam {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-section.makeTeam .contentArea {
-    width: 98%;
-    height: 98%;
-    border: 1px solid gray;
-    border-radius: 10px;
+section.makeTeam .participantSelectBox {
+    margin: 10px;
 }
 
-section.makeTeam .contentArea .participantSelectBox {
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-section.makeTeam .contentArea .participantSelectBox .title {
+section.makeTeam .participantSelectBox .title {
     display: flex;
     align-items: center;
 }
 
-section.makeTeam .contentArea .participantSelectBox .title * {
+section.makeTeam .participantSelectBox .title * {
     margin: 0px;
 }
 
-section.makeTeam .contentArea .participantSelectBox .title p {
+section.makeTeam .participantSelectBox .title p {
+    font-size: 12px;
     margin-left: 15px;
     color: #ff0000;
 }
 
-section.makeTeam .contentArea .participantSelectBox .memberListBox {
+section.makeTeam .participantSelectBox .memberListBox {
+    display: flex;
     padding-top: 10px;
-    display: inline-block;
     width: 100%;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-around;
     height: 244px;
     max-height: 244px;
     overflow-y: auto;
 }
 
-section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox {
+section.makeTeam .participantSelectBox .memberListBox .memberBox {
     display: inline-flex;
     align-items: center;
     border: 1px solid gray;
@@ -297,94 +289,108 @@ section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox {
     min-height: 58px;
 }
 
-section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox .memberImgBox {
-    width: 45px;
-    height: 45px;
+section.makeTeam .participantSelectBox .memberListBox .memberBox .memberInfoBox {
+    text-align: center;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.makeTeam .participantSelectBox .memberListBox .memberBox .memberImgBox {
+    width: 30px;
+    height: 30px;
     border: 1px solid gray;
-    border-radius: 45px;
+    border-radius: 30px;
     overflow: hidden;
-    margin-right: 5px;
 }
 
-section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox .memberInfoBox {
-    width: calc(100% - 45px);
+section.makeTeam .participantSelectBox .memberListBox .memberBox .memberScoreBox {
+    width: 60%;
+    font-size: 13px;
 }
 
-section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox .memberInfoBox table {
+section.makeTeam .participantSelectBox .memberListBox .memberBox .memberInfoBox table {
     font-size: 12px;
 }
 
-section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox .memberInfoBox table tr td:first-child {
+section.makeTeam .participantSelectBox .memberListBox .memberBox .memberInfoBox table tr td:first-child {
     width: 60%;
 }
 
-section.makeTeam .contentArea .participantSelectBox .memberListBox .memberBox .memberInfoBox table tr td:last-child {
+section.makeTeam .participantSelectBox .memberListBox .memberBox .memberInfoBox table tr td:last-child {
     width: 40%;
     text-align: right;
 }
 
-section.makeTeam .contentArea .teamMakeBox {
+section.makeTeam .teamMakeBox {
     margin-left: 10px;
 }
 
-section.makeTeam .contentArea .teamMakeBox .title {
+section.makeTeam .teamMakeBox .title {
     display: flex;
     align-items: center;
 }
 
-section.makeTeam .contentArea .teamMakeBox .title h3 {
+section.makeTeam .teamMakeBox .title h4 {
     margin: 0px;
     margin-right: 10px;
 }
 
-section.makeTeam .contentArea .teamMakeBox .title p {
+section.makeTeam .teamMakeBox .title p {
+    margin-left: 10px;
     color: #ff0000;
+    font-size: 12px;
 }
 
-section.makeTeam .contentArea .teamMakeBox .teamListBox {
+section.makeTeam .teamMakeBox .teamListBox {
     white-space: nowrap;
     overflow-x: auto;
 }
 
-section.makeTeam .contentArea .teamMakeBox .teamListBox .teamInfoBox {
+section.makeTeam .teamMakeBox .teamListBox .teamInfoBox {
     margin-top: 10px;
     border: 1px solid gray;
-    width: 27%;
     margin-right: 15px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+    width: 28%;
+    min-width: 200px;
 }
 
-section.makeTeam .contentArea .teamMakeBox .teamListBox .teamInfoBox h5 {
+section.makeTeam .teamMakeBox .teamListBox .teamInfoBox h5 {
     margin-top: 10px;
     margin-bottom: 5px;
-    font-size: 25px;
 }
 
-section.makeTeam .contentArea .teamMakeBox .teamListBox .teamInfoBox .tableBox {
+section.makeTeam .teamMakeBox .teamListBox .teamInfoBox .tableBox {
     width: 100%;
     height: 170px;
     max-height: 170px;
     overflow-y: auto;
+    font-size: 13px;
 }
 
-section.makeTeam .contentArea .teamMakeBox .teamListBox .teamInfoBox .tableBox table {
+section.makeTeam .teamMakeBox .teamListBox .teamInfoBox .tableBox table {
     width: 100%;
     text-align: center;
 }
 
-section.makeTeam .contentArea .teamMakeBox .teamListBox .teamInfoBox .tableBox table tr td {
+section.makeTeam .teamMakeBox .teamListBox .teamInfoBox .tableBox table tr td {
     width: 33%;
 }
 
-section.makeTeam .contentArea .teamMakeBox .configBtnBox {
+section.makeTeam .configBtnBox {
+    position: absolute;
+    right: 20px;
     padding-right: 10px;
     display: flex;
     justify-content: center;
 }
 
-section.makeTeam .contentArea .teamMakeBox .configBtnBox button {
+section.makeTeam .teamMakeBox .configBtnBox button {
     width: 100%;
     margin-top: 15px;
     padding: 5px;
@@ -398,14 +404,14 @@ section.summary {
     flex-direction: column;
 }
 
-section.summary .contentArea {
+section.summary {
     margin-left: 10px;
     width: 98%;
     border: 1px solid gray;
     border-radius: 10px;
 }
 
-section.summary .contentArea.recentTeamArea {
+section.summary.recentTeamArea {
     height: 280px;
     min-height: 280px;
     max-height: 280px;
@@ -413,30 +419,30 @@ section.summary .contentArea.recentTeamArea {
     overflow-y: auto;
 }
 
-section.summary .contentArea.recentTeamArea .title {
+section.summary.recentTeamArea .title {
     margin: 10px;
     display: flex;
 }
 
-section.summary .contentArea.recentTeamArea .title h3 {
+section.summary.recentTeamArea .title h3 {
     margin: 0px;
 }
 
-section.summary .contentArea.recentTeamArea .title button {
+section.summary.recentTeamArea .title button {
     margin-left: 15px;
     border-radius: 5px;
     font-weight: 100;
     font-size: 14px;
 }
 
-section.summary .contentArea.recentTeamArea .teamListBox {
+section.summary.recentTeamArea .teamListBox {
     white-space: nowrap;
     overflow-x: auto;
     width: 100%;
     margin: 10px;
 }
 
-section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox {
+section.summary.recentTeamArea .teamListBox .teamInfoBox {
     display: inline-block;
     margin-right: 15px;
     width: 27%;
@@ -445,22 +451,22 @@ section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox {
     border-radius: 10px;
 }
 
-section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox h5 {
+section.summary.recentTeamArea .teamListBox .teamInfoBox h5 {
     margin: 0px;
     font-size: 18px;
 }
 
-section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox .tableBox,
-section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox .tableBox table {
+section.summary.recentTeamArea .teamListBox .teamInfoBox .tableBox,
+section.summary.recentTeamArea .teamListBox .teamInfoBox .tableBox table {
     width: 100%;
 }
 
-section.summary .contentArea.recentTeamArea .teamListBox .teamInfoBox .tableBox {
+section.summary.recentTeamArea .teamListBox .teamInfoBox .tableBox {
     max-height: 191px;
     overflow-y: auto;
 }
 
-section.summary .contentArea.recentGameRecord {
+section.summary.recentGameRecord {
     margin-top: 10px;
     height: 55%;
     min-height: 280px;
@@ -468,21 +474,21 @@ section.summary .contentArea.recentGameRecord {
     overflow-y: auto;
 }
 
-section.summary .contentArea.recentGameRecord > * {
+section.summary.recentGameRecord > * {
     margin: 10px;
 }
 
-section.summary .contentArea.recentGameRecord .title h3 {
+section.summary.recentGameRecord .title h3 {
     margin: 0px;
 }
 
-section.summary .contentArea.recentGameRecord table {
+section.summary.recentGameRecord table {
     width: 98%;
     text-align: center;
 }
 
-section.summary .contentArea.recentGameRecord table th, 
-section.summary .contentArea.recentGameRecord table td {
+section.summary.recentGameRecord table th, 
+section.summary.recentGameRecord table td {
     border: 1px solid gray;
 }
 
@@ -571,11 +577,154 @@ section.record .recordButtonBox button {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+section.gameHistory {
+    margin-left: 26%;
+    border: 1px solid black;
+}
+
+section.gameHistory .titleBox {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-between;
+}
+
+section.gameHistory .titleBox .dateBox {
+    display: flex;
+    align-items: center;
+}
+
+section.gameHistory .titleBox .dateBox .hidedInput {
+    width: 0px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+section.gameHistory .titleBox .dateBox label {
+    margin-left: 10px;
+}
+
+section.gameHistory .titleBox .buttonBox button:first-child {
+    margin-right: 10px;
+}
+
+section.gameHistory .tableBox {
+    margin: 0px 10px;
+}
+
+section.gameHistory table.scoreTable {
+    width: 100%;
+    text-align: center;
+}
+
+section.gameHistory table.scoreTable,
+section.gameHistory table.scoreTable td {
+    border: 1px solid black;
+}
+
+section.gameHistory .buttonBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.gameHistory .buttonBox button {
+    width: 49.5%;
+}
+
+section.regularGame .monthTitle {
+    margin: 10px;
+}
+
+section.regularGame .tableBox {
+    margin: 0px 10px;
+}
+
+section.regularGame .tableBox table {
+    width: 100%;
+    text-align: center;
+}
+
+section.regularGame .tableBox table tr, 
+section.regularGame .tableBox table tr td {
+    border: 1px solid black;
+}
+
+section.config {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+section.config .gameInfoConfigBox {
+    position: relative;
+}
+
+section.config .gameInfoConfigBox::before {
+    position: absolute;
+    bottom: -15px;
+    left: 40%;
+    content: '';
+    width: 20%;
+    height: 1px;
+    border-bottom: 1px solid black;
+}
+
+section.config .accountConfigBox::before {
+    position: absolute;
+    bottom: -15px;
+    left: 40%;
+    content: '';
+    width: 20%;
+    height: 1px;
+    border-bottom: 1px solid black;
+}
+
+section.config h4 {
+    margin: 15px 0px;
+}
+
+section.config .gameConfigBox {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+section.config .gameConfigBox input.scoreInput {
+    text-align: right;
+    width: 80px;
+    margin-right: 10px;
+}
+
+section.config .gameConfigBox button {
+    margin-right: 3px;
+}
+
+section.config .accountConfigBox {
+    margin-top: 25px;
+    position: relative;
+}
+
+section.config .accountConfigBox .gameConfigBox {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+section.config .buttonBox button {
+    width: 50%;
+    margin-top: 30px;
+    height: 30px;
+}
+
 section.footer {
     position: absolute;
     bottom: 0px;
     text-align: center;
     width: 100%;
-    height: 47px;
-    margin: 17px 0px;
+    height: 30px;
+    padding: 5px 0px;
+    font-size: 10px;
 }
