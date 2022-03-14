@@ -1,0 +1,42 @@
+<section class="memberList leftPanel">
+    <div class="memberListHeader flex">
+        <h4>
+            회원 목록
+        </h4>
+        <div>
+            <button (click)="openAddMemberDialog()">
+                추가
+            </button>
+        </div>
+    </div>
+    <div class="memberListBox">
+        <div class="memberBox">
+            <div class="memberImageBox">
+                <img src="/assets/images/man-icon.png">
+            </div>
+            <div class="memberName">
+                홍길동
+            </div>
+            <div class="memberManageBtnBox">
+                <button>
+                    수정
+                </button>
+            </div>
+        </div>
+        <div class="memberBox">
+            <div class="memberImageBox">
+                <img src="/assets/images/woman-icon.png">
+            </div>
+            <div class="memberName">
+                홍길순
+            </div>
+            <div class="memberManageBtnBox">
+                <button>
+                    수정
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<add-member *ngIf="isVisibleAddMemberDialog" (closeDialogEvent)="closeDialog()"></add-member>

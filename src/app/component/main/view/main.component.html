@@ -1,0 +1,8 @@
+<menu></menu>
+<memberList *ngIf="!isCurrentMenu(menu.CONFIG)"></memberList>
+<make-team *ngIf="isCurrentMenu(menu.MAKE_TEAM)"></make-team>
+<summary *ngIf="isCurrentMenu(menu.MAIN)"></summary>
+<game-history *ngIf="isCurrentMenu(menu.GAME_HISTORY)"></game-history>
+<regular-game-history *ngIf="isCurrentMenu(menu.REGULAR_GAME)"></regular-game-history>
+<config *ngIf="isCurrentMenu(menu.CONFIG)"></config>
+<footer></footer>

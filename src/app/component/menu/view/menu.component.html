@@ -1,0 +1,26 @@
+<header class="menu flex">
+    <div (click)="changeMenu(menu.MAIN)" class="flex">
+        <div class="logoBox">
+            <img src="/assets/images/temp-logo.png">
+        </div>
+        <h2 class="logoText">
+            볼총무
+        </h2>
+    </div>
+    <div>
+        <a (click)="changeMenu(menu.MAKE_TEAM)" [class.on]="isCurrentMenu(menu.MAKE_TEAM)">
+            팀짜기
+        </a>
+        <a (click)="changeMenu(menu.GAME_HISTORY)" [class.on]="isCurrentMenu(menu.GAME_HISTORY)">
+            게임기록
+        </a>
+        <a (click)="changeMenu(menu.REGULAR_GAME)" [class.on]="isCurrentMenu(menu.REGULAR_GAME)">
+            정기전
+        </a>
+    </div>
+    <div>
+        <a (click)="changeMenu(menu.CONFIG)" [class.on]="isCurrentMenu(menu.CONFIG)">
+            설정
+        </a>
+    </div>
+</header>
