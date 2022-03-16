@@ -113,6 +113,7 @@ header.menu {
 
 header.menu > div:first-child {
     width: 25%;
+    align-items: center;
 }
 
 header.menu > div:nth-child(2) {
@@ -493,7 +494,7 @@ section.summary .recentMemberInfo .clubAvgChartBox .canvasBox canvas {
 section.record {
     z-index: 2;
     width: 65%;
-    max-height: 85%;
+    max-height: 90%;
     overflow: hidden;
     background-color: #ffffff;
     border: 1px solid gray;
@@ -577,7 +578,6 @@ section.record .recordButtonBox button {
 
 section.gameHistory {
     margin-left: 26%;
-    border: 1px solid black;
 }
 
 section.gameHistory .titleBox {
