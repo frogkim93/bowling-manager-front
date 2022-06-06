@@ -16,7 +16,7 @@
                 이름
             </th>
             <th>
-                <input type="text">
+                <input [(ngModel)]="member.name" type="text">
             </th>
         </tr>
         <tr>
@@ -27,18 +27,18 @@
                 <label for="man">
                     남
                 </label>
-                <input id="man" type="radio" name="gender">
+                <input [(ngModel)]="member.gender" id="man" type="radio" name="gender" [value]="gender.MALE">
                 <label for="woman">
                     여
                 </label>
-                <input id="woman" type="radio" name="gender">
+                <input [(ngModel)]="member.gender" id="woman" type="radio" name="gender" [value]="gender.FEMALE">
             </th>
         </tr>
     </table>
     <div>
         <hr>
-        <button (click)="addMember()" class="addMemberBtn">
-            추가
+        <button (click)="save()" class="addMemberBtn">
+            {{ isEditMode? "수정": "추가" }}
         </button>
     </div>
 </section>

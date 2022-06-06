@@ -10,33 +10,26 @@
         </div>
     </div>
     <div class="memberListBox">
-        <div class="memberBox">
+        <div *ngFor="let member of memberList" class="memberBox">
             <div class="memberImageBox">
-                <img src="/assets/images/man-icon.png">
+                <img *ngIf="member.gender == gender.MALE" src="/assets/images/man-icon.png">
+                <img *ngIf="member.gender == gender.FEMALE" src="/assets/images/woman-icon.png">
             </div>
             <div class="memberName">
-                홍길동
+                {{ member.name }}
             </div>
-            <div class="memberManageBtnBox">
+            <div (click)="editMember(member)" class="memberManageBtnBox">
                 <button>
                     수정
                 </button>
             </div>
-        </div>
-        <div class="memberBox">
-            <div class="memberImageBox">
-                <img src="/assets/images/woman-icon.png">
-            </div>
-            <div class="memberName">
-                홍길순
-            </div>
-            <div class="memberManageBtnBox">
+            <div (click)="deleteMember(member)" class="memberManageBtnBox">
                 <button>
-                    수정
+                    삭제
                 </button>
             </div>
         </div>
     </div>
 </section>
 
-<add-member *ngIf="isVisibleAddMemberDialog" (closeDialogEvent)="closeDialog()"></add-member>
+<add-member *ngIf="isVisibleAddMemberDialog" [member]="selectedMember" (closeDialogEvent)="closeDialog()"></add-member>
