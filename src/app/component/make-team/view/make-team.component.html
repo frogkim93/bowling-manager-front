@@ -1,4 +1,63 @@
 <section class="makeTeam rightPanel">
+    <div class="teamMakeBox">
+        <div class="title">
+            <h4>
+                팀 구성
+            </h4>
+            <select (change)="changeTeamCount($event)">
+                <option value="1">
+                    1
+                </option>
+                <option value="2">
+                    2
+                </option>
+                <option value="3" selected>
+                    3
+                </option>
+                <option value="4">
+                    4
+                </option>
+                <option value="5">
+                    5
+                </option>
+            </select>
+            <p>
+                *개인전은 팀 개수를 1개로 선택하시면 됩니다.
+            </p>
+        </div>
+        <div class="teamListBox">
+            <div *ngFor="let team of teamList; let i = index;" (click)="selectTeam(i)" class="teamInfoBox">
+                <h5>
+                    팀{{ i + 1 }}
+                </h5>
+                <div class="tableBox">
+                    <input #checkBox [(ngModel)]="team.isChecked" type="checkbox">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>
+                                    이름
+                                </td>
+                                <td>
+                                    지난달AVG
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let member of team.memberList;">
+                                <td>
+                                    {{ member.name }}
+                                </td>
+                                <td>
+                                    {{ member.lastAvg }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="participantSelectBox">
         <div class="title">
             <h4>
@@ -14,13 +73,17 @@
             </div>
         </div>
         <div class="memberListBox">
-            <div class="memberBox">
+            <div *ngFor="let member of memberList;" class="memberBox" (click)="selectMember(member)">
+                <div class="teamInfoBox" *ngIf="member.teamIndex > -1">
+                    팀{{ member.teamIndex + 1 }}
+                </div>
                 <div class="memberInfoBox">
                     <p>
-                        홍길동
+                        {{ member.name }}
                     </p>
                     <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
+                        <img *ngIf="member.isMan()" src="/assets/images/man-icon.png">
+                        <img *ngIf="!member.isMan()" src="/assets/images/woman-icon.png">
                     </div>
                 </div>
                 <div class="memberScoreBox">
@@ -30,520 +93,9 @@
                                 지난달AVG
                             </td>
                             <td>
-                                219
+                                {{ member.lastAvg }}
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="memberBox">
-                <div class="memberInfoBox">
-                    <p>
-                        홍길동
-                    </p>
-                    <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
-                    </div>
-                </div>
-                <div class="memberScoreBox">
-                    <table>
-                        <tr>
-                            <td>
-                                지난달AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="memberBox">
-                <div class="memberInfoBox">
-                    <p>
-                        홍길동
-                    </p>
-                    <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
-                    </div>
-                </div>
-                <div class="memberScoreBox">
-                    <table>
-                        <tr>
-                            <td>
-                                지난달AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="memberBox">
-                <div class="memberInfoBox">
-                    <p>
-                        홍길동
-                    </p>
-                    <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
-                    </div>
-                </div>
-                <div class="memberScoreBox">
-                    <table>
-                        <tr>
-                            <td>
-                                지난달AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="memberBox">
-                <div class="memberInfoBox">
-                    <p>
-                        홍길동
-                    </p>
-                    <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
-                    </div>
-                </div>
-                <div class="memberScoreBox">
-                    <table>
-                        <tr>
-                            <td>
-                                지난달AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="memberBox">
-                <div class="memberInfoBox">
-                    <p>
-                        홍길동
-                    </p>
-                    <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
-                    </div>
-                </div>
-                <div class="memberScoreBox">
-                    <table>
-                        <tr>
-                            <td>
-                                지난달AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="memberBox">
-                <div class="memberInfoBox">
-                    <p>
-                        홍길동
-                    </p>
-                    <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
-                    </div>
-                </div>
-                <div class="memberScoreBox">
-                    <table>
-                        <tr>
-                            <td>
-                                지난달AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="memberBox">
-                <div class="memberInfoBox">
-                    <p>
-                        홍길동
-                    </p>
-                    <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
-                    </div>
-                </div>
-                <div class="memberScoreBox">
-                    <table>
-                        <tr>
-                            <td>
-                                지난달AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="memberBox">
-                <div class="memberInfoBox">
-                    <p>
-                        홍길동
-                    </p>
-                    <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
-                    </div>
-                </div>
-                <div class="memberScoreBox">
-                    <table>
-                        <tr>
-                            <td>
-                                지난달AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="memberBox">
-                <div class="memberInfoBox">
-                    <p>
-                        홍길동
-                    </p>
-                    <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
-                    </div>
-                </div>
-                <div class="memberScoreBox">
-                    <table>
-                        <tr>
-                            <td>
-                                지난달AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="memberBox">
-                <div class="memberInfoBox">
-                    <p>
-                        홍길동
-                    </p>
-                    <div class="memberImgBox">
-                        <img src="/assets/images/man-icon.png">
-                    </div>
-                </div>
-                <div class="memberScoreBox">
-                    <table>
-                        <tr>
-                            <td>
-                                지난달AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5게임AVG
-                            </td>
-                            <td>
-                                219
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="teamMakeBox">
-        <div class="title">
-            <h4>
-                팀 구성
-            </h4>
-            <select>
-                <option>
-                    1
-                </option>
-                <option>
-                    2
-                </option>
-                <option selected>
-                    3
-                </option>
-                <option>
-                    4
-                </option>
-                <option>
-                    5
-                </option>
-            </select>
-            <p>
-                *개인전은 팀 개수를 1개로 선택하시면 됩니다.
-            </p>
-        </div>
-        <div>
-            
-        </div>
-        <div class="teamListBox">
-            <div class="teamInfoBox">
-                <h5>
-                    팀1
-                </h5>
-                <div class="tableBox">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>
-                                    이름
-                                </td>
-                                <td>
-                                    지난달AVG
-                                </td>
-                                <td>
-                                    5게임AVG
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    홍길동
-                                </td>
-                                <td>
-                                    219
-                                </td>
-                                <td>
-                                    200
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    홍길동
-                                </td>
-                                <td>
-                                    219
-                                </td>
-                                <td>
-                                    200
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    홍길동
-                                </td>
-                                <td>
-                                    219
-                                </td>
-                                <td>
-                                    200
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="teamInfoBox">
-                <h5>
-                    팀1
-                </h5>
-                <div class="tableBox">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>
-                                    이름
-                                </td>
-                                <td>
-                                    지난달AVG
-                                </td>
-                                <td>
-                                    5게임AVG
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    홍길동
-                                </td>
-                                <td>
-                                    219
-                                </td>
-                                <td>
-                                    200
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    홍길동
-                                </td>
-                                <td>
-                                    219
-                                </td>
-                                <td>
-                                    200
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    홍길동
-                                </td>
-                                <td>
-                                    219
-                                </td>
-                                <td>
-                                    200
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="teamInfoBox">
-                <h5>
-                    팀1
-                </h5>
-                <div class="tableBox">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>
-                                    이름
-                                </td>
-                                <td>
-                                    지난달AVG
-                                </td>
-                                <td>
-                                    5게임AVG
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    홍길동
-                                </td>
-                                <td>
-                                    219
-                                </td>
-                                <td>
-                                    200
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    홍길동
-                                </td>
-                                <td>
-                                    219
-                                </td>
-                                <td>
-                                    200
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    홍길동
-                                </td>
-                                <td>
-                                    219
-                                </td>
-                                <td>
-                                    200
-                                </td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </div>

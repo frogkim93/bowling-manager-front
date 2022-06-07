@@ -7,4 +7,5 @@ export class APIUrl {
     public static MEMBER: string = APIUrl.SERVER + "/member";
     public static SPECIFIC_MEMBER: any = (memberSeq: number) => `${APIUrl.MEMBER}/${memberSeq}`;
     public static MEMBER_LIST: any = (accountSeq: number) => `${APIUrl.MEMBER}/byMaster/${accountSeq}`;
+    public static MEMBER_WITH_AVG_LIST: any = (accountSeq: number) => `${APIUrl.MEMBER}/byMaster/${accountSeq}/withAvg`;
 }

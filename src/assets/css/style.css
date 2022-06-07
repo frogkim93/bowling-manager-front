@@ -290,6 +290,20 @@ section.makeTeam .participantSelectBox .memberListBox .memberBox {
     height: 58px;
     max-height: 58px;
     min-height: 58px;
+    position: relative;
+}
+
+section.makeTeam .participantSelectBox .memberListBox .memberBox .teamInfoBox {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    font-size: 20px;
+    height: 100%;
+    border-radius: 8px;
+    text-align: center;
 }
 
 section.makeTeam .participantSelectBox .memberListBox .memberBox .memberInfoBox {
