@@ -1,14 +1,21 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component } from "@angular/core";
+import { RecentTeamService } from "../main/recent-team/service/recent-team.service";
 
 @Component({
     selector: "record",
-    templateUrl: "./view/record.component.html"
+    templateUrl: "./view/record.component.html",
+    providers: [RecentTeamService]
 })
 export class RecordComponent {
-    @Output()
-    public closeEvent: EventEmitter<void> = new EventEmitter();
+    constructor(private recentTeamService: RecentTeamService) {
+        this.getRecentTeam();
+    }
 
-    public closeDialog(): void {
-        this.closeEvent.emit();
+    public getRecentTeam(): void {
+        this.recentTeamService.getRecentTeam().subscribe(
+            response => {
+                console.log(response);
+            }
+        )
     }
 }

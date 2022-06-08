@@ -1,6 +1,9 @@
 import { Component, ElementRef, QueryList, ViewChildren } from "@angular/core";
+import { HTTPStatus } from "src/app/config/http.status";
+import { MenuCode } from "src/app/const/menu.code";
 import { MemberWithAvgDto } from "src/app/dto/team/memberWithAvg.dto";
 import { TeamDto } from "src/app/dto/team/team.dto";
+import { MenuService } from "src/app/service/menu.service";
 import { TeamService } from "./service/team.service";
 
 @Component({
@@ -15,7 +18,7 @@ export class MakeTeamComponent {
     public teamCount: number = 3;
     public teamList: TeamDto[] = [];
 
-    constructor(private teamService: TeamService) {
+    constructor(private teamService: TeamService, private menuService: MenuService) {
         this.searchMember();
         this.createTeam();
         this.checkFirstTeam();
@@ -117,5 +120,36 @@ export class MakeTeamComponent {
                 }
             );
         }
+    }
+
+    public save(): void {
+        if (!this.isValid()) {
+            alert("팀원이 없는 팀이 존재합니다.");
+            return;
+        }
+
+        this.teamService.saveTeam(this.teamList).subscribe(
+            response => {
+                if (response == HTTPStatus.OK) {
+                    alert("팀을 생성하였습니다.");
+                    this.menuService.changeMenu(MenuCode.MAIN);
+                }
+            }
+        );
+    }
+
+    private isValid(): boolean {
+        let isValid: boolean = true;
+
+        this.teamList.forEach(
+            team => {
+                if (team.memberList.length == 0) {
+                    isValid = false;
+                    return;
+                }
+            }
+        );
+
+        return isValid;
     }
 }

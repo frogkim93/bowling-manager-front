@@ -15,6 +15,7 @@ import { LoginComponent } from './component/login/login.component';
 import { MainComponent } from './component/main/main.component';
 import { AddMemberComponent } from './component/main/memberList/add-member/add-member.component';
 import { MemberListComponent } from './component/main/memberList/memberList.component';
+import { RecentTeamComponent } from './component/main/recent-team/recent-team.component';
 import { MakeTeamComponent } from './component/make-team/make-team.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { RecordComponent } from './component/record/record.component';
@@ -29,6 +30,7 @@ import { MenuService } from './service/menu.service';
     AppComponent,
     LoginComponent,
     MainComponent,
+    RecentTeamComponent,
     MenuComponent,
     MemberListComponent,
     AddMemberComponent,

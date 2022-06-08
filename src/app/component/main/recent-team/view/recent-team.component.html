@@ -1,0 +1,41 @@
+<div class="recentTeamArea">
+    <div class="title">
+        <h4>
+            최근 팀
+        </h4>
+        <button (click)="goToRecord()">
+            점수 기록
+        </button>
+    </div>
+    <div class="teamListBox">
+        <div *ngFor="let team of teamList; let i = index;" class="teamInfoBox">
+            <h5>
+                팀 {{ i + 1 }}
+            </h5>
+            <div class="tableBox">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                이름
+                            </td>
+                            <td>
+                                지난달AVG
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let member of team.memberList">
+                            <td>
+                                {{ member.name }}
+                            </td>
+                            <td>
+                                {{ member.lastAvg }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
