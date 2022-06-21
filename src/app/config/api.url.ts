@@ -10,5 +10,7 @@ export class APIUrl {
     public static MEMBER_WITH_AVG_LIST: any = (accountSeq: number) => `${APIUrl.MEMBER}/byMaster/${accountSeq}/withAvg`;
 
     public static TEAM: string = APIUrl.SERVER + "/team";
-    public static RECENT_TEAM: any = (accountSeq: number) => `${APIUrl.TEAM}/byMaster/${accountSeq}`;
+    public static RECENT_TEAM: any = (accountSeq: number) => `${APIUrl.TEAM}/${accountSeq}`;
+
+    public static RECORD: string = APIUrl.SERVER + "/record";
 }
